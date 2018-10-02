@@ -10,7 +10,10 @@
 
 <body ng-controller="PrenomController">
 
-  <button ng-click="sort()">Sort</button>
+  <div>
+    <button ng-click="sort()">Sort</button>
+    Filter : <input ng-model="prenomFilter">
+  </div>
 
   <div>
     Prénom :
@@ -18,9 +21,9 @@
     <button ng-click="add()">+</button>
   </div>
 
-  <p ng-repeat="prenom in prenoms">
+  <p ng-repeat="prenom in prenoms | filter:prenomFilter">
     Bonjour
-    <span ng-bind="prenom"></span>
+    <span ng-bind="prenom | uppercase"></span>
     <button ng-click="remove($index)">-</button>
   </p>
 
