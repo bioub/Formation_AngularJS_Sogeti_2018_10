@@ -7,9 +7,15 @@
   <title>Contact Angular</title>
 </head>
 <body>
-  <contacts-list></contacts-list>
+  <nav>
+    <a ui-sref="contacts-list">List</a>
+    <a ui-sref="contacts-add">Add</a>
+  </nav>
+
+  <ui-view></ui-view>
 
   <script src="../node_modules/angular/angular.js"></script>
+  <script src="../node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
   <script src="contacts/contacts-add/contacts-add.component.js"></script>
   <script src="contacts/contacts-list/contacts-list.component.js"></script>
   <script src="contacts/contacts.module.js"></script>
