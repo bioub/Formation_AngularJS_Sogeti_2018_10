@@ -1,0 +1,13 @@
+<button ng-click="prenomCtrl.sort()">Sort</button>
+
+<div>
+  Prénom :
+  <input ng-model="prenomCtrl.prenom">
+  <button ng-click="prenomCtrl.add()">+</button>
+</div>
+
+<p ng-repeat="prenom in prenomCtrl.prenoms">
+  Bonjour
+  <span ng-bind="prenom"></span>
+  <button ng-click="prenomCtrl.remove($index)">-</button>
+</p>
