@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<!--
+  1 - bootstrap (ngApp)
+  2 - template (directive au milieu du HTML)
+  3 - directive (custom attributes html qui masque du JS)
+  4 - compilation (exécute les fonction liés aux directives)
+  5 - data binding (synchronisation entre le model et la vue)
+-->
+<body ng-app>
+
+  <div>
+    Prénom : <input ng-model="prenom">
+  </div>
+  <p>
+    Bonjour {{prenom}} <span ng-bind="prenom"></span> !!!
+  </p>
+
+  <script src="../node_modules/angular/angular.js"></script>
+</body>
+</html>

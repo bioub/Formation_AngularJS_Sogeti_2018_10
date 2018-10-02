@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    [ng-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+<body ng-app>
+  <!--
+    6 - scope (portée créée au niveau d'une balise
+    par certaines directives, ex: ng-app, ng-repeat, ng-if, ng-controller...)
+    ATTENTION : jamais utiliser 2 directives qui créent un scope sur la meme balise
+    ex à ne pas faire : <p ng-repeat="prenom in prenoms" ng-if="!$first">
+  -->
+  <div>
+    Prénom : <input ng-model="prenom">
+  </div>
+  <p>
+    Bonjour <span ng-bind="prenom"></span> !!!
+  </p>
+
+  <div>
+    Prénoms : <input ng-model="prenoms" ng-list>
+  </div>
+
+  <p ng-repeat="prenom in prenoms track by $index" ng-cloak>
+    <span ng-bind="$index"></span>
+    <span ng-bind="prenom"></span>
+    <button ng-if="$last">-</button>
+  </p>
+
+  <script src="../node_modules/angular/angular.js"></script>
+
+
+</body>
+</html>
