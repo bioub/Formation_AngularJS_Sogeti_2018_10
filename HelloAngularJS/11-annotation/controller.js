@@ -28,9 +28,12 @@
     }
   }
 
+  // option 1
   PrenomController.$inject = ['starWarsService'];
-
   module.controller('PrenomController', PrenomController);
+
+  // option 2
+  // module.controller('PrenomController', ['starWarsService', PrenomController]);
 
   module.component('prenomsList', {
     controller: 'PrenomController',

@@ -8,8 +8,11 @@
 
   /**
    * @param {import('@uirouter/angularjs').StateProvider} $stateProvider
+   * @param {import('angular').ILocationProvider} $locationProvider
    */
-  function config($stateProvider) {
+  function config($stateProvider, $locationProvider) {
+    // $locationProvider.html5Mode(true);
+
     $stateProvider.state({
       name: 'contacts-list',
       url: '/contacts',
@@ -23,7 +26,7 @@
     });
   }
 
-  config.$inject = ['$stateProvider'];
+  config.$inject = ['$stateProvider', '$locationProvider'];
 
   module.config(config);
 
