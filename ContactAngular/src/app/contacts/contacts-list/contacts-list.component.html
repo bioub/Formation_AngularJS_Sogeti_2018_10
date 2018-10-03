@@ -1,5 +1,14 @@
-<ul>
-  <li *ngFor="let contact of contacts">
-    {{contact.name}}
-  </li>
-</ul>
+<div class="row">
+  <div class="col">
+    <ul>
+      <li *ngFor="let contact of contacts">
+        <a [routerLink]="[contact.id]">
+          {{contact.name}}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="col">
+    <router-outlet></router-outlet>
+  </div>
+</div>

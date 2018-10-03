@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactService } from '../contact.service';
 import { Contact } from '../contact';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-contacts-list',
@@ -14,6 +15,15 @@ export class ContactsListComponent implements OnInit {
   constructor(private contactService: ContactService) { }
 
   ngOnInit() {
+    this.getContacts();
+    this.contactService.events.pipe(
+      filter((event) => event === 'refresh'),
+    ).subscribe((event) => {
+      this.getContacts();
+    });
+  }
+
+  getContacts() {
     this.contactService.getAll().subscribe((contacts) => {
       this.contacts = contacts;
     });

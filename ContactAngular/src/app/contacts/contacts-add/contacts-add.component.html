@@ -1,3 +1,12 @@
-<p>
-  contacts-add works!
-</p>
+<form (submit)="contactForm.valid && add()" #contactForm="ngForm" novalidate>
+  <p [ngClass]="{error: name.invalid && (name.touched || contactForm.submitted)}">
+    Name : <input [(ngModel)]="contact.name" name="name" required #name="ngModel">
+    <span *ngIf="name.invalid && (name.touched || contactForm.submitted)">Le name est obligatoire</span>
+  </p>
+  <p>
+    Company : <input [(ngModel)]="contact.company" name="company">
+  </p>
+  <p>
+    <button>+</button>
+  </p>
+</form>
