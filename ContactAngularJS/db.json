@@ -1,0 +1,6 @@
+{
+  "contacts": [
+    {"id": 1, "name": "Steve Jobs", "company": "Apple"},
+    {"id": 2, "name": "Bill Gates", "company": "Microsoft"}
+  ]
+}

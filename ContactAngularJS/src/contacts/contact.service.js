@@ -8,8 +8,8 @@
       this.$http = $http;
     }
     getPeopleNames() {
-      return this.$http.get('https://swapi.co/api/people/')
-        .then((res) => res.data.results.map((people) => people.name));
+      return this.$http.get('http://localhost:3000/contacts')
+        .then((res) => res.data.map((people) => people.name));
     }
   }
 
