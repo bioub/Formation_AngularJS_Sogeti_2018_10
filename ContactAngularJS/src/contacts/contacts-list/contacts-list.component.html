@@ -1,6 +1,29 @@
-<h2>Contacts List</h2>
-<ul>
-  <li ng-repeat="prenom in $ctrl.prenoms">
-    {{prenom}}
-  </li>
-</ul>
+<div class="row">
+  <div class="col">
+    <ul>
+      <li ng-repeat="contact in $ctrl.contacts">
+        <a ui-sref="contacts.show({id: contact.id})">
+          {{contact.name}}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="col">
+    <ui-view></ui-view>
+  </div>
+</div>
+
+<style>
+  .row {
+    display: flex;
+  }
+
+  .col:first-child {
+    width: 200px;
+  }
+
+  .col:nth-child(2) {
+    flex: 1;
+  }
+</style>
+

@@ -5,9 +5,9 @@
 
   class ContactsListController {
     constructor(contactService) {
-      this.prenoms = [];
-      contactService.getPeopleNames()
-        .then((prenoms) => this.prenoms = prenoms);
+      this.contacts = [];
+      contactService.getAll()
+        .then((contacts) => this.contacts = contacts);
     }
   }
 

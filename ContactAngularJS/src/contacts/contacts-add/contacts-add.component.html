@@ -1,9 +1,7 @@
-<h2>Contact Add</h2>
-
-<form ng-submit="add()" name="contactForm" novalidate >
+<form ng-submit="contactForm.$valid && $ctrl.add()" name="contactForm" novalidate >
   <p ng-class="{error: contactForm.name.$invalid && (contactForm.name.$touched || contactForm.$submitted)}">
     Name : <input ng-model="$ctrl.contact.name" name="name" required>
-    <span>Le name est obligatoire</span>
+    <span ng-show="contactForm.name.$invalid && (contactForm.name.$touched || contactForm.$submitted)">Le name est obligatoire</span>
   </p>
   <p>
     Company : <input ng-model="$ctrl.contact.company" name="company">
@@ -16,14 +14,6 @@
 <style>
   p.error input {
     border: 2px solid red;
-  }
-
-  span {
-    display: none;
-  }
-
-  p.error span {
-    display: inline;
   }
 
   /*

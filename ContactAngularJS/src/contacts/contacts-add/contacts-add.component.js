@@ -4,7 +4,9 @@
   const module = angular.module('contacts-add.component', []);
 
   class ContactAddController {
-    constructor(contactService) {
+    constructor(contactService, $state) {
+      this.contactService = contactService;
+      this.$state = $state;
       this.contact = {
         name: '',
         company: '',
@@ -12,11 +14,14 @@
     }
 
     add() {
-      console.log(this.contact);
+      this.contactService.create(this.contact)
+        .then(() => {
+          this.$state.go('contacts-list'); // redirige vers la route contacts-list
+        });
     }
   }
 
-  ContactAddController.$inject = ['contactService'];
+  ContactAddController.$inject = ['contactService', '$state'];
 
   module.component('contactsAdd', {
     controller: ContactAddController,

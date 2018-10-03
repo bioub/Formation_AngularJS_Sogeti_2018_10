@@ -1,6 +1,19 @@
 {
   "contacts": [
-    {"id": 1, "name": "Steve Jobs", "company": "Apple"},
-    {"id": 2, "name": "Bill Gates", "company": "Microsoft"}
+    {
+      "id": 1,
+      "name": "Steve Jobs",
+      "company": "Apple"
+    },
+    {
+      "id": 2,
+      "name": "Bill Gates",
+      "company": "Microsoft"
+    },
+    {
+      "name": "Mark Zuckerberg",
+      "company": "Facebook",
+      "id": 3
+    }
   ]
 }
